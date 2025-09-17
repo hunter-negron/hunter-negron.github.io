@@ -13,18 +13,8 @@
     </head>
     <body>
         <h1>Essays by Hunter Negron</h1>
-        <nav>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">All Essays</a></li>
-                <li><a href="">My Vision</a></li>
-            </ul>
-            <hr />
-        </nav>
+        <nav hx-get="nav.html" hx-trigger="load"></nav>
         <article hx-get="sample.html" hx-trigger="load"></article>
-        <footer>
-            <hr />
-            <p><em>“Thus saith the LORD, The heaven is my throne, and the earth is my footstool: where is the house that ye build unto me? and where is the place of my rest?”</em> Isaiah 66:1 KJV</p>
-        </footer>
+        <footer hx-get="footer.html" hx-trigger="load"></footer>
     </body>
 </html>
