@@ -1,29 +1,90 @@
+/* general style */
 body {
-    max-width: 650px;
     margin: 40px auto;
+    max-width: 650px;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #444;
     padding: 0 10px;
-    font: 18px/1.5
-        "Helvetica Neue",
-        Arial,
-        sans-serif;
-    color: #444
 }
 
-h1, h2, h3 {
-    line-height: 1.2
+h1,h2,h3 {
+    line-height: 1.2;
 }
 
+/* nav bar */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.2s ease;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    nav ul li {
+        padding: 0 0.5rem;
+    }
+    
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+/* image styling */
+figure {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+figcaption {
+    margin-top: 0.5rem;
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+}
+
+/* responsive image sizing */
+@media (max-width: 600px) {
+    figure {
+        margin: 1.5rem 0;
+    }
+    
+    figcaption {
+        font-size: 13px;
+        margin-top: 0.25rem;
+    }
+}
+
+/* dark mode image adjustments */
 @media (prefers-color-scheme: dark) {
-    body {
-        color: #c9d1d9;
-        background: #0d1117
+    figure img {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
-
-    a:link {
-        color: #58a6ff
-    }
-
-    a:visited {
-        color: #8e96f0
+    
+    figcaption {
+        color: #8b949e;
     }
 }
