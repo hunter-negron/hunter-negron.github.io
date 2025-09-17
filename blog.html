@@ -9,7 +9,7 @@
         <link rel="shortcut icon" href="favicon.png"  type="image/png" />
         <link rel="canonical" href="https://hnegron.com">
         <link rel="stylesheet" href="style.css" type="text/css" />
-        <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7/dist/htmx.min.js"></script>
     </head>
     <body>
         <h1>Essays by Hunter Negron</h1>
@@ -21,7 +21,7 @@
             </ul>
             <hr />
         </nav>
-        <article></article>
+        <article hx-get="sample.html" hx-trigger="load"></article>
         <footer>
             <hr />
             <p><em>“Thus saith the LORD, The heaven is my throne, and the earth is my footstool: where is the house that ye build unto me? and where is the place of my rest?”</em> Isaiah 66:1 KJV</p>
