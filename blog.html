@@ -9,6 +9,29 @@
         <link rel="shortcut icon" href="favicon.png"  type="image/png" />
         <link rel="canonical" href="https://hnegron.com">
         <link rel="stylesheet" href="style.css" type="text/css" />
+        <script>
+            function LoadPost(url) {
+                const article = document.querySelector('article');
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', url, true);
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        article.innerHTML = xhr.responseText;
+                    } else {
+                        article.innerHTML = '<p>Error loading content. Please try again.</p>';
+                    }
+                };
+                xhr.onerror = function() {
+                    article.innerHTML = '<p>Error loading content. Please check your connection.</p>';
+                };
+                xhr.send();
+            }
+            
+            // Load content when the page loads
+            document.addEventListener('DOMContentLoaded', function() {
+                LoadPost('sample.html');
+            });
+        </script>
     </head>
     <body>
         <h1>Essays by Hunter Negron</h1>
@@ -20,26 +43,7 @@
             </ul>
             <hr />
         </nav>
-        <article>
-            <h2>Lorem Ipsum</h2>
-            <h3>Dolor sit amet</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eros odio, laoreet sed libero ac, sagittis eleifend turpis. Vivamus lacinia fermentum neque vel elementum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec mollis viverra diam quis fermentum. Aliquam ac mattis metus. Pellentesque interdum orci et magna accumsan blandit ut id mi. Sed efficitur efficitur erat vitae semper. Mauris pulvinar, metus dapibus interdum tempor, leo erat pharetra quam, hendrerit venenatis nisl nibh sit amet velit. Quisque ac mi ante. Vestibulum aliquam velit sit amet lacus hendrerit ornare. Sed rutrum est eu dolor commodo, vel lobortis libero commodo. Proin accumsan diam neque, sed eleifend tortor congue eget. Nunc mattis suscipit purus, sit amet fermentum dui vestibulum malesuada.</p>
-            <h3>Aliquam mollis velit quis</h3>
-            <p>Aliquam mollis velit quis est volutpat fringilla vitae at sem. Morbi non nisi ligula. Pellentesque pretium nunc id arcu aliquam fringilla. Aliquam pulvinar, nibh a ullamcorper pulvinar, nisl sem ornare odio, ut porta purus dolor at nulla. In eu posuere metus. Fusce commodo metus mi, eu aliquam sapien mollis nec. Aliquam et mi sit amet nisl scelerisque aliquet in sit amet arcu.</p>
-            <figure>
-                <img src="https://placehold.co/200x100" alt="Placeholder" />
-                <figcaption>Small Placeholder</figcaption>
-            </figure>
-            <figure>
-                <img src="https://placehold.co/600x400" alt="Placeholder" />
-                <figcaption>Medium Placeholder</figcaption>
-            </figure>
-            <figure>
-                <img src="https://placehold.co/1920x1080" alt="Placeholder" />
-                <figcaption>LargePlaceholder</figcaption>
-            </figure>
-            <p>Sed sed est tempor, venenatis justo sed, placerat massa. Fusce a lorem ipsum. Donec condimentum nibh sed est finibus, sed auctor tellus convallis. Proin sit amet eleifend dolor, at malesuada nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas eu diam vitae erat aliquet gravida. Cras elementum, nibh sed molestie egestas, tortor neque fringilla orci, at congue lacus nisi et erat. Fusce sit amet condimentum est. Duis vel risus scelerisque, mattis dolor a, imperdiet ex.</p>
-        </article>
+        <article></article>
         <footer>
             <hr />
             <p><em>“Thus saith the LORD, The heaven is my throne, and the earth is my footstool: where is the house that ye build unto me? and where is the place of my rest?”</em> Isaiah 66:1 KJV</p>
